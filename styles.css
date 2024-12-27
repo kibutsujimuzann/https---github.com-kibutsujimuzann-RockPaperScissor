@@ -15,14 +15,14 @@ body {
     padding: 20px;
     display: flex;
     align-items: center;
+    position: absolute;
     justify-content: space-between;
-    width: 80%;
-    max-width: 600px;
+    width: 600px;
     margin-top: 20px; 
 }
 
 .game-title {
-    font-size: 2rem;
+    font-size: 24px;
     font-weight: bold;
     color: rgb(255, 255, 255);
     text-align: left;
@@ -36,8 +36,8 @@ body {
 
 .score {
     background-color: white;
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,7 +46,7 @@ body {
 }
 
 .label {
-    font-size: 0.75rem;
+    font-size: 12px;
     color: #000000;
     font-weight: bold;
     text-align: center;
@@ -54,12 +54,13 @@ body {
 }
 
 .value {
-    font-size: 2.25rem;
+    font-size: 36px;
     font-weight: bold;
     color: black;
 }
 
-.Rock, .Scissors, .Paper {
+
+.Rock, .Scissors {
     width: 100px;
     height: 100px;
     border-radius: 100%;
@@ -68,30 +69,53 @@ body {
     justify-content: center;
     align-items: center;
     border: 15px solid;
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
+    
 }
 
+
 .Rock {
+    left: 39%; 
     border-color: blue;
 }
 
 .Scissors {
+    left: 54%; 
     border-color: purple;
 }
 
+
 .Paper {
-    border-color: orange;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 15px solid orange;
+    position: absolute;
+    bottom: 125px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.Rock:hover, .Paper:hover, .Scissors:hover {
+.Rock:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
-
+.Paper:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+.Scissors:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
 .icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background-size: cover;
 }
 
@@ -106,50 +130,72 @@ body {
 .Paper .icon {
     background-image: url('https://s3-alpha-sig.figma.com/img/9e58/4d5f/879bf162796082bc4c606349436e0c52?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GA1VkmR-fYAZCVLYtylUSpD9i-OZtnPljUXUpKiIuc9NBn1RTZb1okY0QIfkqv4RHxCBkGX6a3uXw-V9tldH83K-YU0M0~aW86Z8-VTlg18Ji98ziznKxQtrMtnBlIVO59oEOgoy4kn5ZjT9ssPCUjKXjcA2KAE7DFYUed6iXRvMgWmqpk7fsq1WS4w6bEWcYkP8R3ZZYweG-7TbWBqBIdvTwj6ywfBYEJxKGXOQkM2CPRmGG0mXo7Ehu9a5RqK0T36T0UU60h25kmYhrO8xYmI9GvJx5RStLZH6dcnXZ16zOjUysRLz7p~mvzp5jfXiMv0ok1FcYGN5dXgQCMcPzA__');
 }
+.triangle{
+    width: 350px;
+    height: 350px;
+    margin-top: 280px;
+    margin-left: 10px;
 
-.triangle {
-    width: 40vw;
-    height: 40vw;
-    margin-top: 20px;
-    margin-left: 5%;
 }
 
-.container1 {
+  .container1 {
+    position: relative;
+    width: 300px;
+    padding: 20px;
     position: fixed; 
-    bottom: 80px;
-    right: 10px;
+    bottom: 65px;
+    right: 15px; 
     background-color: #295939;
     color: white;
     border-radius: 8px;
-    padding: 20px;
     border: 5px solid white; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    max-width: 300px;
-    width: 90%;
-}
-
-.container1 h1 {
-    font-size: 1.5rem;
+  }
+  
+  .container1 h1 {
+    font-size: 24px;
+    margin: 0;
     text-align: center;
-}
-
-.container1 ul {
+  }
+  
+  .container1 ul {
     margin: 20px 0 0 0;
     padding: 0;
     list-style: none;
-}
-
-.container1 ul li {
+  }
+  
+  .container1 ul li {
     margin-bottom: 10px;
     display: flex;
     align-items: flex-start;
+  }
+  
+  .container1.button {
+  display: inline-block;
+  background-color: #90c867; 
+  color: white;
+  padding: 10px 20px; 
+  border-radius: 8px; 
+  border: 2px solid #ffffff; 
+  font-family: Arial, sans-serif; 
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
 }
+ ul li::before {
+    content: "■";
+    color: #ffd966;
+    font-size: 12px;
+    margin-right: 10px;
+  }
 
 .rules-button:hover {
     background-color: #d9d9d9;
 }
 
-.close-icon {
+  
+
+  .close-icon {
     position: absolute;
     top: -15px;
     right: -15px;
@@ -157,20 +203,19 @@ body {
     height: 30px;
     background-color: #ff3b3b;
     color: white;
-    font-size: 1.25rem;
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
     line-height: 30px;
     border-radius: 50%;
     border: 5px solid white;
     cursor: pointer;
-}
-
-.close-icon:hover {
+  }
+  
+  .close-icon:hover {
     background-color: #e13232;
-}
-
-.button {
+  }
+  .button {
     display: inline-block;
     position: fixed;
     bottom: 15px;
@@ -192,83 +237,276 @@ body {
     transform: scale(1.1); 
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); 
 }
+  
+  .afterpicking {
+    display: none;
+    margin: auto;
+    width: 900px;
+    text-align: center; 
+  }
+  
+  .afterpicking img {
+    width: 275px;
+    height: 275px;
+    margin: auto;
+  }
+  
+  .afterpicking > div {
+    flex: 1;
+  }
+  
+  .afterpicking h1 {
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  
+  .afterpicking .newgame {
+    color: #000000;
+    background-color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  
+  .newgame:hover {
+    background: rgb(218, 218, 218);
+    transform: translate3d(0px, -2px, 0px);
+  }
+  
+  .afterpicking .userchoice,
+  .afterpicking .pcchoice {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .result h1 {
+    font-size: 45px;
+    color: white;
+  }
+  
+  .computer {
+    display: flex;
+    flex-direction: column;
+  }
+  .nextbutton {
+    
+    color: white;
+    background-color: #8CC152;
+    padding: 12px 24px;
+    border-radius: 6px;
+    border: 2px solid white;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    transition: all 0.2s;
+}
 
-@media (max-width: 768px) {
-    .container {
-        width: 90%;
-        padding: 15px;
+.nextbutton:hover {
+    background-color: #91b967;
+    transform: translate3d(0px, -2px, 0px);
+}
+
+.winner-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #8CC152;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+.winner-page .newgame {
+    margin-top: 30px;
+    background-color: white;
+    color: #8CC152;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.winner-page .newgame:hover {
+    background-color: rgb(218, 218, 218);
+    transform: translate3d(0px, -2px, 0px);
+}
+
+  
+  .trophy {
+    text-align: center;
+    font-size: 80px;
+    color: #ffd700;
+  }
+  
+  h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  p {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  
+  .stars {
+    margin-top: 20px;
+  }
+  
+  .star {
+    font-size: 30px;
+    margin: 5px;
+    color: #ffffff;
+  }
+
+ img{
+   width: 100px;
+   height: 100px;
+   margin-top: 90px;
+   align-items: center;
+ }
+.winner-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #8CC152;
+    color: white;
+    text-align: center;
+}
+
+.winner-page h1 {
+    font-size: 80px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.winner-page p {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.star {
+    color: #2e2e2e;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-right: 500px;
+}
+
+.star1 {
+    color: #2e2e2e;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 500px;
+}
+
+.star2 {
+    color: #2e2e2e;
+    width: 100px;
+    height: 100px;
+    margin-top: 1px;
+    margin-left: 600px;
+}
+.star3 {
+    color: #2e2e2e;
+    width: 100px;
+    height: 100px;
+    margin-top: 1px;
+    margin-right: 600px;
+}
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
     }
-
-    .game-title {
-        font-size: 1.5rem;
-    }
-
-    .score {
-        width: 70px;
-        height: 70px;
-    }
-
-    .value {
-        font-size: 1.5rem;
-    }
-
-    .Rock, .Scissors, .Paper {
-        width: 80px;
-        height: 80px;
-    }
-
-    .icon {
-        width: 50px;
-        height: 50px;
-    }
-
-    .triangle {
-        width: 30vw;
-        height: 30vw;
-    }
-
-    .container1 {
-        width: 85%;
-        bottom: 50px;
+    50% {
+        opacity: 0.5;
     }
 }
 
-@media (max-width: 480px) {
-    .container {
-        width: 100%;
-        padding: 10px;
-    }
+.winner-page .newgame1 {
+    margin-top: 30px;
+    background-color: white;
+    color: #000000;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
 
-    .game-title {
-        font-size: 1.2rem;
-    }
+.winner-page .newgame1:hover {
+    background-color: rgb(218, 218, 218);
+    transform: translate3d(0px, -2px, 0px);
+}
 
-    .score {
-        width: 60px;
-        height: 60px;
-    }
+.userchoice {
+    position: absolute;
+    top: 400px; 
+    left: 400px; 
+  }
 
-    .value {
-        font-size: 1.25rem;
-    }
+  
+ 
+  .pcchoice {
+    position: absolute;
+    top: 400px; 
+    right: 530px;
+}
 
-    .Rock, .Scissors, .Paper {
-        width: 70px;
-        height: 70px;
-    }
+  .Paper1 {
+    position: relative;
+    top:-60px;
+    left: 5px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: white;
+    border: 15px solid orange; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+.Paper1 .icon1 {
+    background-image: url('https://s3-alpha-sig.figma.com/img/9e58/4d5f/879bf162796082bc4c606349436e0c52?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GA1VkmR-fYAZCVLYtylUSpD9i-OZtnPljUXUpKiIuc9NBn1RTZb1okY0QIfkqv4RHxCBkGX6a3uXw-V9tldH83K-YU0M0~aW86Z8-VTlg18Ji98ziznKxQtrMtnBlIVO59oEOgoy4kn5ZjT9ssPCUjKXjcA2KAE7DFYUed6iXRvMgWmqpk7fsq1WS4w6bEWcYkP8R3ZZYweG-7TbWBqBIdvTwj6ywfBYEJxKGXOQkM2CPRmGG0mXo7Ehu9a5RqK0T36T0UU60h25kmYhrO8xYmI9GvJx5RStLZH6dcnXZ16zOjUysRLz7p~mvzp5jfXiMv0ok1FcYGN5dXgQCMcPzA__');
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+}
 
-    .icon {
-        width: 40px;
-        height: 40px;
-    }
-
-    .triangle {
-        width: 25vw;
-        height: 25vw;
-    }
-
-    .container1 {
-        width: 95%;
-        bottom: 40px;
-    }
+.Paper2 {
+    position: relative;
+    top: -60px;
+    left: 130px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: white;
+    border: 15px solid orange; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+.Paper2 .icon2 {
+    background-image: url('https://s3-alpha-sig.figma.com/img/9e58/4d5f/879bf162796082bc4c606349436e0c52?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GA1VkmR-fYAZCVLYtylUSpD9i-OZtnPljUXUpKiIuc9NBn1RTZb1okY0QIfkqv4RHxCBkGX6a3uXw-V9tldH83K-YU0M0~aW86Z8-VTlg18Ji98ziznKxQtrMtnBlIVO59oEOgoy4kn5ZjT9ssPCUjKXjcA2KAE7DFYUed6iXRvMgWmqpk7fsq1WS4w6bEWcYkP8R3ZZYweG-7TbWBqBIdvTwj6ywfBYEJxKGXOQkM2CPRmGG0mXo7Ehu9a5RqK0T36T0UU60h25kmYhrO8xYmI9GvJx5RStLZH6dcnXZ16zOjUysRLz7p~mvzp5jfXiMv0ok1FcYGN5dXgQCMcPzA__');
+    width: 60px;
+    height: 60px;
+    background-size: cover;
 }
