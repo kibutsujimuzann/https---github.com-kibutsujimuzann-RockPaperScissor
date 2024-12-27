@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-title">ROCK<br>PAPER<br>SCISSORS</div>
+        <div class="score-board">
+            <div class="score">
+                <span class="label">COMPUTER SCORE</span>
+                <span class="value">0</span>
+            </div>
+            <div class="score">
+                <span class="label">YOUR SCORE</span>
+                <span class="value">0</span>
+            </div>
+        </div>
+    </div>
+    <div class="gamearea">
+        <img class="triangle" src="https://static.thenounproject.com/png/1721983-200.png">
+        <div class="Rock" onclick="userPick ('Rock')">
+            <div class="icon"></div>
+        </div>
+        <div class="Scissors" onclick="userPick ('Scissors')">
+            <div class="icon"></div>
+        </div>
+        <div class="Paper"onclick="userPick ('Paper')">
+            <div class="icon"></div>
+        </div>
+    </div>
+    <div class="container1">
+        <h1>Game Rules</h1>
+        <ul>
+          <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+          <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+          <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+          <li>If both players lay down the same hand, each player lays down another hand.</li>
+        </ul>
+        <div class="close-icon" onclick="userPick ('Close button')">X</div>
+      </div>
+      <div class="button" onclick="userPick ('rules button')">
+        RULES
+      </div> 
+      <div class="afterpicking">       
+        <div class="user">
+            <h1>YOU PICKED</h1>
+            <div class="userchoice"></div>
+        </div>
+        <div class="result"> 
+            <div class="gameresult"><h1> YOU WIN! </h1></div>
+            <div class="newgame" onclick="restartGame()">PLAY AGAIN</div>
+            <div class="nextbutton" style="display: none;" onclick="showWinnerPage()">NEXT</div>
+        </div>
+        <div class="computer">
+            <h1>PC PICKED</h1>
+            <div class="pcchoice"> 
+            </div>   
+        </div>       
+      </div> 
+      <div class="winner-page" style="display: none;">
+        <div class="trophy"><img src="https://icons.veryicon.com/png/o/business/color-olympic-events-flat-icon/the-trophy.png"></div>
+        <h1>HURRAY!!</h1>
+        <p>YOU WON THE GAME</p>
+        <div class="stars">
+          <img class="star" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Red_star.svg/220px-Red_star.svg.png">
+          <img class="star1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Red_star.svg/220px-Red_star.svg.png">
+          <img class="star2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Red_star.svg/220px-Red_star.svg.png">
+          <img class="star3" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Red_star.svg/220px-Red_star.svg.png">
+        </div>
+        <div class="newgame1" onclick="restartGame1()">PLAY AGAIN</div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

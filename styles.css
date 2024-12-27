@@ -1,0 +1,512 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    height: 100vh;
+    background-color: #8CC152;
+}
+
+.container {
+    background-color: #8CC152;
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    justify-content: space-between;
+    width: 600px;
+    margin-top: 20px; 
+}
+
+.game-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    line-height: 1.5;
+}
+
+.score-board {
+    display: flex;
+    gap: 20px;
+}
+
+.score {
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.label {
+    font-size: 12px;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.value {
+    font-size: 36px;
+    font-weight: bold;
+    color: black;
+}
+
+
+.Rock, .Scissors {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 15px solid;
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    
+}
+
+
+.Rock {
+    left: 39%; 
+    border-color: blue;
+}
+
+.Scissors {
+    left: 54%; 
+    border-color: purple;
+}
+
+
+.Paper {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 15px solid orange;
+    position: absolute;
+    bottom: 125px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.Rock:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+.Paper:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+.Scissors:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+.icon {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+}
+
+.Rock .icon {
+    background-image: url('https://s3-alpha-sig.figma.com/img/e2f5/14e9/7d8f1b87d406a7bced07190e2c368075?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=gpDXfFrRiYL2k61IlL7-Css-yI~wxRi~hdbcvODOHd-KLCcY93G22GcrIB9J4kjnwvDvVnWRZLP2j~uCiTMXl49iqZ76HsAfgKNk2vFqh8xi-rNj0mbtVu2sC3OiXHhge62HZstnb~w4H0ixcUj3Nl18yNQ2rnpzX0ZMiMDQjV7wnIqoOjjcvhfLVM9rhKnumcF8mDCPX6n8LBxzDqEOrYhp-fHm0VeZEQ1gQayoSaPNkz486OwffuE4v8-GOe9V6XwbsV~OJqcVapOaDJJE~TTQEOveSdhTuun3ER3m~dJ242X-M8iRhvJY9JhnmWroETyKN3tFK0ZliQeNsjnIrA__');
+}
+
+.Scissors .icon {
+    background-image: url('https://s3-alpha-sig.figma.com/img/388b/63da/8e9ba336eea3ea7f107fc48755a6b68d?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=CfaM3IGpLoT0qXu3Yv9N9Hr9n1UaoWJG3-4IzboT7~EcjtH5-bWLEaeMOgKVOolSz2RGTWa3Mg9EqeAZ-mBGh2i3oX3Alklk-CNQWYToZV3rEfUMGzn9PaXSFXzgGG1AUcKyDpXAhdUTVnnEqYGFki0iZZgVd581FAlg~Jqos8SWkVfn6y4Ee9h4QOeYR4M5wErXIrKIDO~iqoerxZhAm69WKjB5QkeUXkfWRwh~uXGQbYeHMLBI59SBMzpD0D3YN9hl9H02AQIlGkEojbWAZyBmDkONQdFKs9MghE4lXs21JMhwdVjWmoTaZXy9Ytxddq6OO-~bPBEC7elaZO6gLg__');
+}
+
+.Paper .icon {
+    background-image: url('https://s3-alpha-sig.figma.com/img/9e58/4d5f/879bf162796082bc4c606349436e0c52?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GA1VkmR-fYAZCVLYtylUSpD9i-OZtnPljUXUpKiIuc9NBn1RTZb1okY0QIfkqv4RHxCBkGX6a3uXw-V9tldH83K-YU0M0~aW86Z8-VTlg18Ji98ziznKxQtrMtnBlIVO59oEOgoy4kn5ZjT9ssPCUjKXjcA2KAE7DFYUed6iXRvMgWmqpk7fsq1WS4w6bEWcYkP8R3ZZYweG-7TbWBqBIdvTwj6ywfBYEJxKGXOQkM2CPRmGG0mXo7Ehu9a5RqK0T36T0UU60h25kmYhrO8xYmI9GvJx5RStLZH6dcnXZ16zOjUysRLz7p~mvzp5jfXiMv0ok1FcYGN5dXgQCMcPzA__');
+}
+.triangle{
+    width: 350px;
+    height: 350px;
+    margin-top: 280px;
+    margin-left: 10px;
+
+}
+
+  .container1 {
+    position: relative;
+    width: 300px;
+    padding: 20px;
+    position: fixed; 
+    bottom: 65px;
+    right: 15px; 
+    background-color: #295939;
+    color: white;
+    border-radius: 8px;
+    border: 5px solid white; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .container1 h1 {
+    font-size: 24px;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .container1 ul {
+    margin: 20px 0 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .container1 ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .container1.button {
+  display: inline-block;
+  background-color: #90c867; 
+  color: white;
+  padding: 10px 20px; 
+  border-radius: 8px; 
+  border: 2px solid #ffffff; 
+  font-family: Arial, sans-serif; 
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+}
+ ul li::before {
+    content: "■";
+    color: #ffd966;
+    font-size: 12px;
+    margin-right: 10px;
+  }
+
+.rules-button:hover {
+    background-color: #d9d9d9;
+}
+
+  
+
+  .close-icon {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 30px;
+    height: 30px;
+    background-color: #ff3b3b;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    border: 5px solid white;
+    cursor: pointer;
+  }
+  
+  .close-icon:hover {
+    background-color: #e13232;
+  }
+  .button {
+    display: inline-block;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background-color: #8CC152;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid #ffffff;
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease; 
+}
+
+.button:hover {
+    background-color: #7aa740; 
+    transform: scale(1.1); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); 
+}
+  
+  .afterpicking {
+    display: none;
+    margin: auto;
+    width: 900px;
+    text-align: center; 
+  }
+  
+  .afterpicking img {
+    width: 275px;
+    height: 275px;
+    margin: auto;
+  }
+  
+  .afterpicking > div {
+    flex: 1;
+  }
+  
+  .afterpicking h1 {
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  
+  .afterpicking .newgame {
+    color: #000000;
+    background-color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  
+  .newgame:hover {
+    background: rgb(218, 218, 218);
+    transform: translate3d(0px, -2px, 0px);
+  }
+  
+  .afterpicking .userchoice,
+  .afterpicking .pcchoice {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .result h1 {
+    font-size: 45px;
+    color: white;
+  }
+  
+  .computer {
+    display: flex;
+    flex-direction: column;
+  }
+  .nextbutton {
+    
+    color: white;
+    background-color: #8CC152;
+    padding: 12px 24px;
+    border-radius: 6px;
+    border: 2px solid white;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.nextbutton:hover {
+    background-color: #91b967;
+    transform: translate3d(0px, -2px, 0px);
+}
+
+.winner-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #8CC152;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+.winner-page .newgame {
+    margin-top: 30px;
+    background-color: white;
+    color: #8CC152;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.winner-page .newgame:hover {
+    background-color: rgb(218, 218, 218);
+    transform: translate3d(0px, -2px, 0px);
+}
+
+  
+  .trophy {
+    text-align: center;
+    font-size: 80px;
+    color: #ffd700;
+  }
+  
+  h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  p {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  
+  .stars {
+    margin-top: 20px;
+  }
+  
+  .star {
+    font-size: 30px;
+    margin: 5px;
+    color: #ffffff;
+  }
+
+ img{
+   width: 100px;
+   height: 100px;
+   margin-top: 90px;
+   align-items: center;
+ }
+.winner-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #8CC152;
+    color: white;
+    text-align: center;
+}
+
+.winner-page h1 {
+    font-size: 80px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.winner-page p {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.star {
+    color: #2e2e2e;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-right: 500px;
+}
+
+.star1 {
+    color: #2e2e2e;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 500px;
+}
+
+.star2 {
+    color: #2e2e2e;
+    width: 100px;
+    height: 100px;
+    margin-top: 1px;
+    margin-left: 600px;
+}
+.star3 {
+    color: #2e2e2e;
+    width: 100px;
+    height: 100px;
+    margin-top: 1px;
+    margin-right: 600px;
+}
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.winner-page .newgame1 {
+    margin-top: 30px;
+    background-color: white;
+    color: #000000;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.winner-page .newgame1:hover {
+    background-color: rgb(218, 218, 218);
+    transform: translate3d(0px, -2px, 0px);
+}
+
+.userchoice {
+    position: absolute;
+    top: 400px; 
+    left: 400px; 
+  }
+
+  
+ 
+  .pcchoice {
+    position: absolute;
+    top: 400px; 
+    right: 530px;
+}
+
+  .Paper1 {
+    position: relative;
+    top:-60px;
+    left: 5px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: white;
+    border: 15px solid orange; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+.Paper1 .icon1 {
+    background-image: url('https://s3-alpha-sig.figma.com/img/9e58/4d5f/879bf162796082bc4c606349436e0c52?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GA1VkmR-fYAZCVLYtylUSpD9i-OZtnPljUXUpKiIuc9NBn1RTZb1okY0QIfkqv4RHxCBkGX6a3uXw-V9tldH83K-YU0M0~aW86Z8-VTlg18Ji98ziznKxQtrMtnBlIVO59oEOgoy4kn5ZjT9ssPCUjKXjcA2KAE7DFYUed6iXRvMgWmqpk7fsq1WS4w6bEWcYkP8R3ZZYweG-7TbWBqBIdvTwj6ywfBYEJxKGXOQkM2CPRmGG0mXo7Ehu9a5RqK0T36T0UU60h25kmYhrO8xYmI9GvJx5RStLZH6dcnXZ16zOjUysRLz7p~mvzp5jfXiMv0ok1FcYGN5dXgQCMcPzA__');
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+}
+
+.Paper2 {
+    position: relative;
+    top: -60px;
+    left: 130px;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    background-color: white;
+    border: 15px solid orange; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+.Paper2 .icon2 {
+    background-image: url('https://s3-alpha-sig.figma.com/img/9e58/4d5f/879bf162796082bc4c606349436e0c52?Expires=1736121600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GA1VkmR-fYAZCVLYtylUSpD9i-OZtnPljUXUpKiIuc9NBn1RTZb1okY0QIfkqv4RHxCBkGX6a3uXw-V9tldH83K-YU0M0~aW86Z8-VTlg18Ji98ziznKxQtrMtnBlIVO59oEOgoy4kn5ZjT9ssPCUjKXjcA2KAE7DFYUed6iXRvMgWmqpk7fsq1WS4w6bEWcYkP8R3ZZYweG-7TbWBqBIdvTwj6ywfBYEJxKGXOQkM2CPRmGG0mXo7Ehu9a5RqK0T36T0UU60h25kmYhrO8xYmI9GvJx5RStLZH6dcnXZ16zOjUysRLz7p~mvzp5jfXiMv0ok1FcYGN5dXgQCMcPzA__');
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+}
